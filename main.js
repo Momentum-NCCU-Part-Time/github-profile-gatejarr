@@ -31,15 +31,16 @@ gitForm.addEventListener("submit", (event) => {
       head.appendChild(name);
 
       let location = document.createElement("h3");
-      location.innerText = parsedJsonResponse.location;
+      location.innerText = "Location: " + parsedJsonResponse.location;
       bio.appendChild(location);
 
-      let gitUrl = document.createElement("h3");
-      gitUrl.innerText = parsedJsonResponse.html_url;
+      let gitUrl = document.createElement("a");
+      gitUrl.innerText = "GitHub URL: " + parsedJsonResponse.html_url;
+      gitUrl.href = parsedJsonResponse.html_url;
       bio.appendChild(gitUrl);
 
       let usrName = document.createElement("h3");
-      usrName.innerText = parsedJsonResponse.login;
+      usrName.innerText = "GitHub username: " +  parsedJsonResponse.login;
       bio.appendChild(usrName);
 
       let gitRepos = document.createElement("h4");
