@@ -3,3 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+img {
+  height: 125px;
+  width: auto;
+  border-radius: 50%;
+}
+
+#head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
