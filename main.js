@@ -21,7 +21,7 @@ fetch(gitAPI)
 
     let name = document.createElement("h1");
     name.innerText = parsedJsonResponse.name;
-    head.appendChild(name);
+    header.appendChild(name);
 
     let location = document.createElement("div");
     location.innerText = "Location: " + parsedJsonResponse.location;
@@ -43,7 +43,7 @@ fetch(gitAPI)
     descr.innerText = "About me: " + parsedJsonResponse.bio;
     bio.appendChild(descr);
 
-    results.appendChild(head);
+    results.appendChild(header);
     results.appendChild(bio);
   });
 

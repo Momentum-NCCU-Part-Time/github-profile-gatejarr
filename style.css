@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(245, 245, 245);
 }
 
 img {
@@ -12,7 +12,7 @@ img {
   border-radius: 50%;
 }
 
-#head {
+#header {
   padding: 25px;
   display: flex;
   flex-direction: row;
@@ -49,8 +49,7 @@ p {
 }
 
 ul {
-  list-style: inside;
-  list-style-image: url("book-solid.svg");
+  list-style: inside url("book-solid.svg");
 }
 
 li {
