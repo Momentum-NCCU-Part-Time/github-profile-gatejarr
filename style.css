@@ -16,5 +16,14 @@ img {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: solid 1px lightgray;
+}
+
+#bio {
+  padding: 10px 30px 10px 30px;
+  border: solid 1px rgb(237, 233, 233);
+}
+
+h2 {
+  background-color: rgb(196, 196, 196);
+  padding: 15px 0 15px 25px;
 }
