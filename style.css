@@ -36,9 +36,16 @@ h2 {
   border-radius: 5px;
 }
 
-/* ul {
-  padding: 10px 30px 10px 30px;
-} */
+p,
+div {
+  font-size: 26px;
+  font-weight: bold;
+  padding: 0 0 10px 0;
+}
+
+ul {
+  list-style: inside;
+}
 
 li {
   padding: 10px 30px 10px 30px;

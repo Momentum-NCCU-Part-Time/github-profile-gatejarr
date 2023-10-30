@@ -23,17 +23,20 @@ fetch(gitAPI)
     name.innerText = parsedJsonResponse.name;
     head.appendChild(name);
 
-    let location = document.createElement("h4");
+    let location = document.createElement("div");
     location.innerText = "Location: " + parsedJsonResponse.location;
     bio.appendChild(location);
 
     //Currently includes "GitHub URL" in link
+    let gitHub = document.createElement("div");
+    gitHub.innerText = "GitHub URL: ";
     let gitUrl = document.createElement("a");
-    gitUrl.innerHTML = "GitHub URL: " + parsedJsonResponse.login;
+    gitUrl.innerHTML = parsedJsonResponse.login;
     gitUrl.href = parsedJsonResponse.html_url;
-    bio.appendChild(gitUrl);
+    bio.appendChild(gitHub);
+    gitHub.appendChild(gitUrl);
 
-    let usrName = document.createElement("h4");
+    let usrName = document.createElement("div");
     usrName.innerText = "GitHub username: " + parsedJsonResponse.login;
     bio.appendChild(usrName);
 
