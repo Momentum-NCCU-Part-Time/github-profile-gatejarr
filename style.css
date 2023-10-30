@@ -21,7 +21,9 @@ img {
 
 #bio {
   padding: 10px 30px 10px 30px;
-  border: solid 1px rgb(237, 233, 233);
+  border: solid 3px rgb(237, 233, 233);
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px lightgray;
 }
 
 h1 {
@@ -29,12 +31,20 @@ h1 {
 }
 
 h2 {
-  background-color: rgb(196, 196, 196);
+  background-color: rgb(212, 209, 209);
   padding: 15px 0 15px 25px;
+  border-radius: 5px;
 }
 
-ul {
+/* ul {
   padding: 10px 30px 10px 30px;
+} */
+
+li {
+  padding: 10px 30px 10px 30px;
+  border: solid 3px rgb(237, 233, 233);
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px lightgray;
 }
 
 a,

@@ -27,9 +27,9 @@ fetch(gitAPI)
     location.innerText = "Location: " + parsedJsonResponse.location;
     bio.appendChild(location);
 
-    //Currently includes "GitHub URL in link"
+    //Currently includes "GitHub URL" in link
     let gitUrl = document.createElement("a");
-    gitUrl.innerText = "GitHub URL: " + parsedJsonResponse.html_url;
+    gitUrl.innerHTML = "GitHub URL: " + parsedJsonResponse.login;
     gitUrl.href = parsedJsonResponse.html_url;
     bio.appendChild(gitUrl);
 
