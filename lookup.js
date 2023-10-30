@@ -24,29 +24,65 @@ gitForm.addEventListener("submit", (event) => {
       image.src = parsedJsonResponse.avatar_url;
       imageContainer.appendChild(image);
 
-      let name = document.createElement("h2");
+      let name = document.createElement("h1");
       name.innerText = parsedJsonResponse.name;
       head.appendChild(name);
 
-      let location = document.createElement("h3");
+      let location = document.createElement("div");
       location.innerText = "Location: " + parsedJsonResponse.location;
       bio.appendChild(location);
 
+      let gitHub = document.createElement("div");
+      gitHub.innerText = "GitHub URL: ";
       let gitUrl = document.createElement("a");
-      gitUrl.innerText = "GitHub URL: " + parsedJsonResponse.html_url;
+      gitUrl.innerHTML = parsedJsonResponse.login;
       gitUrl.href = parsedJsonResponse.html_url;
-      bio.appendChild(gitUrl);
+      bio.appendChild(gitHub);
+      gitHub.appendChild(gitUrl);
 
-      let usrName = document.createElement("h3");
+      let usrName = document.createElement("div");
       usrName.innerText = "GitHub username: " + parsedJsonResponse.login;
       bio.appendChild(usrName);
 
-      let gitRepos = document.createElement("h4");
-      gitRepos.innerText = parsedJsonResponse.repos_url;
-      repos.appendChild(gitRepos);
+      let descr = document.createElement("p");
+      descr.innerText = "About me: " + parsedJsonResponse.bio;
+      bio.appendChild(descr);
 
       results.appendChild(head);
       results.appendChild(bio);
+    });
+
+  fetch(reposAPI)
+    .then((response) => {
+      return response.json();
+    })
+    .then((parsedJsonResponse) => {
+      console.log(parsedJsonResponse);
+
+      let reposAPI = document.createElement("ul");
+
+      let repoOne = document.createElement("li");
+      let repoOneLink = document.createElement("a");
+      repoOneLink.innerText = parsedJsonResponse[0]["name"];
+      repoOneLink.href = parsedJsonResponse[0]["html_url"];
+      repoOne.appendChild(repoOneLink);
+      reposAPI.appendChild(repoOne);
+
+      let repoTwo = document.createElement("li");
+      let repoTwoLink = document.createElement("a");
+      repoTwoLink.innerText = parsedJsonResponse[1]["name"];
+      repoTwoLink.href = parsedJsonResponse[1]["html_url"];
+      repoTwo.appendChild(repoTwoLink);
+      reposAPI.appendChild(repoTwo);
+
+      let repoThree = document.createElement("li");
+      let repoThreeLink = document.createElement("a");
+      repoThreeLink.innerText = parsedJsonResponse[2]["name"];
+      repoThreeLink.href = parsedJsonResponse[2]["html_url"];
+      repoThree.appendChild(repoThreeLink);
+      reposAPI.appendChild(repoThree);
+
+      repos.appendChild(reposAPI);
       results.appendChild(repos);
     });
 });
