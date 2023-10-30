@@ -1,7 +1,7 @@
 const gitAPI = "https://api.github.com/users/gatejarr";
 const reposAPI = "https://api.github.com/users/gatejarr/repos";
-let userProfile = document.getElementById("gitName");
-let button = document.getElementById("idButton");
+//let userProfile = document.getElementById("gitName");
+//let button = document.getElementById("idButton");
 let results = document.getElementById("results");
 let head = document.getElementById("head");
 let avatar = document.getElementById("imageContainer");
@@ -27,6 +27,7 @@ fetch(gitAPI)
     location.innerText = "Location: " + parsedJsonResponse.location;
     bio.appendChild(location);
 
+    //Currently includes "GitHub URL in link"
     let gitUrl = document.createElement("a");
     gitUrl.innerText = "GitHub URL: " + parsedJsonResponse.html_url;
     gitUrl.href = parsedJsonResponse.html_url;
@@ -36,13 +37,8 @@ fetch(gitAPI)
     usrName.innerText = "GitHub username: " + parsedJsonResponse.login;
     bio.appendChild(usrName);
 
-    // let reposAPI = document.createElement("h4");
-    // reposAPI.innerText = parsedJsonResponse.repos_url;
-    // repos.appendChild(reposAPI);
-
     results.appendChild(head);
     results.appendChild(bio);
-    // results.appendChild(repos);
   });
 
 fetch(reposAPI)
@@ -53,14 +49,28 @@ fetch(reposAPI)
     console.log(parsedJsonResponse);
 
     let reposAPI = document.createElement("ul");
-    reposAPI.innerText = parsedJsonResponse[0]["name"];
-    repos.appendChild(reposAPI);
 
+    let repoOne = document.createElement("li");
+    let repoOneLink = document.createElement("a");
+    repoOneLink.innerText = parsedJsonResponse[0]["name"];
+    repoOneLink.href = parsedJsonResponse[0]["url"];
+    repoOne.appendChild(repoOneLink);
+    reposAPI.appendChild(repoOne);
+
+    let repoTwo = document.createElement("li");
+    let repoTwoLink = document.createElement("a");
+    repoTwoLink.innerText = parsedJsonResponse[1]["name"];
+    repoTwoLink.href = parsedJsonResponse[1]["url"];
+    repoTwo.appendChild(repoTwoLink);
+    reposAPI.appendChild(repoTwo);
+
+    let repoThree = document.createElement("li");
+    let repoThreeLink = document.createElement("a");
+    repoThreeLink.innerText = parsedJsonResponse[2]["name"];
+    repoThreeLink.href = parsedJsonResponse[2]["url"];
+    repoThree.appendChild(repoThreeLink);
+    reposAPI.appendChild(repoThree);
+
+    repos.appendChild(reposAPI);
     results.appendChild(repos);
   });
-// const gitRepos = parsedJsonResponse.repos_url;
-// fetch(gitRepos).then((response) =>{
-//   return response.json();
-// })
-// .then((parsedJsonResponse);
-// console.log(parsedJsonResponse);)
