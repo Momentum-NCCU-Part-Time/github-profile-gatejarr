@@ -1,4 +1,5 @@
 const gitAPI = "https://api.github.com/users/gatejarr";
+const reposAPI = "https://api.github.com/users/gatejarr/repos";
 let userProfile = document.getElementById("gitName");
 let button = document.getElementById("idButton");
 let results = document.getElementById("results");
@@ -35,13 +36,31 @@ fetch(gitAPI)
     usrName.innerText = "GitHub username: " + parsedJsonResponse.login;
     bio.appendChild(usrName);
 
-    //  let gitRepos = document.createElement("h4");
-    //  gitRepos.innerText = parsedJsonResponse.repos_url;
-    //  repos.appendChild(gitRepos);
+    // let reposAPI = document.createElement("h4");
+    // reposAPI.innerText = parsedJsonResponse.repos_url;
+    // repos.appendChild(reposAPI);
 
     results.appendChild(head);
     results.appendChild(bio);
-    //  results.appendChild(repos);
-
-    return fetch(parsedJsonResponse.repos_url);
+    // results.appendChild(repos);
   });
+
+fetch(reposAPI)
+  .then((response) => {
+    return response.json();
+  })
+  .then((parsedJsonResponse) => {
+    console.log(parsedJsonResponse);
+
+    let reposAPI = document.createElement("ul");
+    reposAPI.innerText = parsedJsonResponse[0]["name"];
+    repos.appendChild(reposAPI);
+
+    results.appendChild(repos);
+  });
+// const gitRepos = parsedJsonResponse.repos_url;
+// fetch(gitRepos).then((response) =>{
+//   return response.json();
+// })
+// .then((parsedJsonResponse);
+// console.log(parsedJsonResponse);)
