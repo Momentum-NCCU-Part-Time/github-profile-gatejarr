@@ -53,21 +53,21 @@ fetch(reposAPI)
     let repoOne = document.createElement("li");
     let repoOneLink = document.createElement("a");
     repoOneLink.innerText = parsedJsonResponse[0]["name"];
-    repoOneLink.href = parsedJsonResponse[0]["url"];
+    repoOneLink.href = parsedJsonResponse[0]["html_url"];
     repoOne.appendChild(repoOneLink);
     reposAPI.appendChild(repoOne);
 
     let repoTwo = document.createElement("li");
     let repoTwoLink = document.createElement("a");
     repoTwoLink.innerText = parsedJsonResponse[1]["name"];
-    repoTwoLink.href = parsedJsonResponse[1]["url"];
+    repoTwoLink.href = parsedJsonResponse[1]["html_url"];
     repoTwo.appendChild(repoTwoLink);
     reposAPI.appendChild(repoTwo);
 
     let repoThree = document.createElement("li");
     let repoThreeLink = document.createElement("a");
     repoThreeLink.innerText = parsedJsonResponse[2]["name"];
-    repoThreeLink.href = parsedJsonResponse[2]["url"];
+    repoThreeLink.href = parsedJsonResponse[2]["html_url"];
     repoThree.appendChild(repoThreeLink);
     reposAPI.appendChild(repoThree);
 
