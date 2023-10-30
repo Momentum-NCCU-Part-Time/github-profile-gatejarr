@@ -2,11 +2,11 @@ const gitAPI = "https://api.github.com/users/gatejarr";
 const reposAPI = "https://api.github.com/users/gatejarr/repos";
 //let userProfile = document.getElementById("gitName");
 //let button = document.getElementById("idButton");
-let results = document.getElementById("results");
-let head = document.getElementById("head");
-let avatar = document.getElementById("imageContainer");
-let bio = document.getElementById("bio");
-let repos = document.getElementById("repos");
+// let results = document.getElementById("results");
+// let head = document.getElementById("head");
+// let avatar = document.getElementById("imageContainer");
+// let bio = document.getElementById("bio");
+// let repos = document.getElementById("repos");
 
 fetch(gitAPI)
   .then((response) => {
@@ -27,7 +27,6 @@ fetch(gitAPI)
     location.innerText = "Location: " + parsedJsonResponse.location;
     bio.appendChild(location);
 
-    //Currently includes "GitHub URL" in link
     let gitHub = document.createElement("div");
     gitHub.innerText = "GitHub URL: ";
     let gitUrl = document.createElement("a");
@@ -39,6 +38,10 @@ fetch(gitAPI)
     let usrName = document.createElement("div");
     usrName.innerText = "GitHub username: " + parsedJsonResponse.login;
     bio.appendChild(usrName);
+
+    let descr = document.createElement("p");
+    descr.innerText = "About me: " + parsedJsonResponse.bio;
+    bio.appendChild(descr);
 
     results.appendChild(head);
     results.appendChild(bio);

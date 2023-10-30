@@ -3,10 +3,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  background-color: whitesmoke;
 }
 
 img {
-  height: 125px;
+  height: 200px;
   width: auto;
   border-radius: 50%;
 }
@@ -23,7 +24,7 @@ img {
   padding: 10px 30px 10px 30px;
   border: solid 3px rgb(237, 233, 233);
   border-radius: 5px;
-  box-shadow: 1px 1px 1px 1px lightgray;
+  box-shadow: 2px 2px 2px 2px lightgray;
 }
 
 h1 {
@@ -36,22 +37,27 @@ h2 {
   border-radius: 5px;
 }
 
-p,
 div {
   font-size: 26px;
   font-weight: bold;
   padding: 0 0 10px 0;
 }
 
+p {
+  font-size: 24px;
+  font-weight: lighter;
+}
+
 ul {
   list-style: inside;
+  list-style-image: url("book-solid.svg");
 }
 
 li {
   padding: 10px 30px 10px 30px;
   border: solid 3px rgb(237, 233, 233);
   border-radius: 5px;
-  box-shadow: 1px 1px 1px 1px lightgray;
+  box-shadow: 2px 2px 2px 2px lightgray;
 }
 
 a,
