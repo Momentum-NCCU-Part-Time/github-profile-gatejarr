@@ -40,7 +40,10 @@ fetch(gitAPI)
     bio.appendChild(usrName);
 
     let descr = document.createElement("p");
-    descr.innerText = "About me: " + parsedJsonResponse.bio;
+    let about = document.createElement("h4");
+    about.innerText = "About me: ";
+    descr.innerText = parsedJsonResponse.bio;
+    bio.appendChild(about);
     bio.appendChild(descr);
 
     results.appendChild(header);
